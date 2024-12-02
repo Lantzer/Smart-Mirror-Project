@@ -2,9 +2,11 @@
 .layout {
   /* Set your own grid   */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 400px;
-  grid-column-gap: 1em;
+  grid-template-columns: (2fr 1fr 1fr);
+  grid-template-rows: auto auto;
+  row-gap: 10em;
+  padding: 5em;
+
 }
 
 /* Widgets */
@@ -15,9 +17,61 @@ section {
   /* Relative Parent. Absolute Child */
   position: relative;
 }
+/* Font */
+@font-face {
+  font-family: DigitalFont;
+  src: url(../fonts/digital.ttf);
+}
+
+body{
+  background-color: gray;
+
+}
 
 /* Time */
 .time {
+  font-size: 8em;
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: #101010;
+  
+  padding: 10px;
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  align-items: center;;
+  justify-self: center;
+}
+
+
+.clock-container {
+  display: grid;
+  border: 1px solid #101010;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.412);
+  padding: 10px;
+  grid-template-columns: 1fr .5fr 1fr .5fr 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+  font-family: DigitalFont;
+  color: rgb(71, 219, 38);
+  text-shadow: 0 0 10px rgb(71, 219, 38);
+} 
+
+
+
+
+.seperators {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.top {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
 }
 
 .hours {
@@ -30,7 +84,7 @@ section {
 }
 
 .amOrPM {
-  
+  font-size: medium;
 }
 
 /* Date */
